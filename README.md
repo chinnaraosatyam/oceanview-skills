@@ -11,6 +11,7 @@ This directory contains reusable GitHub Copilot agents for the OceanView Amazon 
 | [Code Review Agent](code-review.agent.md) | Review a branch or the current Lambda package for defects, security risks, regressions, and missing tests. | `code-review 2 feature/callback-status` |
 | [Create Service Scaffolder](create-service-.agent.md) | Create a shared `service_<name>` Python package for use by Lambda packages. | `create-service secrets_manager "Wrap Secrets Manager access"` |
 | [Update Lambda Agent](update-lambda.agent.md) | Modify an existing Lambda package with focused implementation changes and regression-safe validation. | `update-lambda callback_status_api "Improve request validation"` |
+| [Codebase Flattening Agent](codebase-flattener.agent.md) | Flatten the repository structure for easier navigation and management, ensuring all packages and modules are accessible from a single entry point. Useful for migrating the Repository's Technical Context and overall structure to OgGPT. | `flatten-codebase --scope repo` |
 
 ## Prompt Shortcuts
 
@@ -37,6 +38,7 @@ The following workflows require explicit confirmation before proceeding:
 - **Update Lambda:** confirms the target package, behavior change, affected files, risks, and test impact.
 - **Create Service:** confirms the service purpose, public API, package name, and planned files.
 - **AWS Cost Review:** confirms repositories, environments, confidence level, and optimization goals.
+- **Flatten Codebase:** confirms the repository structure, ensuring all packages and modules are accessible from a single entry point. Especially to give it to OgGPT. Take Flattened file, attach to OgGPT and Query whatever the queries are.
 
 Code review and the `check` prompt are read-only workflows. They do not modify source, dependency, lock, or Terraform files.
 
